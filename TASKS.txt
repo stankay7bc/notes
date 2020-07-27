@@ -1,0 +1,13 @@
+- emphasize, ideate basic simple UI design 
+- add max width ratio
+
+(^)
+-!> delete/autosave interplay issues
+
+[X]
+? document all reactive procedures: create written descriptions
+!? orthogonal note list update strategy
+- restructure react.js code base for clarity and efficiency 
+- (^) asynch db layer callback on first page load: transaction error 
+  + error tracking on objectStore
+- revise autosave loop, do not save empty notes

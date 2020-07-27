@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Notepad</title>
+	<link 
+        href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" 
+        rel="stylesheet" type="text/css" />
+	<link href="css/position.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<main>
+		<section class="page" id="editor">
+			<textarea id="sheet" 
+                class='' 
+                placeholder="A note..."></textarea>
+			<nav id="top-bar1">
+				<!-- control elements: add, delete, view list -->
+				<ol>
+					<li><button id="delete-note"><b>X</b></button></li>
+        <li class='desktop-mobile-vh'><button id="list">&#x2630</button></li>
+      </ol>
+    </nav>
+    </section>
+    <aside class="page">
+      <section id="note-list" class=''><!-- list of note stubs --></section>
+      <nav id="top-bar0">
+        <!-- place for control elements -->
+        <ol>
+          <!--<li class='desktop-mobile-vh'><button>[Ed]</button></li>-->
+          <li><button>&#x21EA</button></li>
+          <li><button id="add-note"><b>&#x271A</b></button></li>
+        </ol>
+      </nav>
+    </aside>
+  </main>
+
+  <script type="module">
+    import(`${location.pathname}js/db.js`).then(mod1 => {
+      let db = mod1.dbIN("Notepad", ["notes"], 1, () => {
+        import(`${location.pathname}js/app.js`).then(mod2 => {
+          mod2.NoteApp(db).init(); 
+        });
+      });
+    });
+  </script>
+  </body>
+</html>

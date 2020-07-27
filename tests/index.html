@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <!--<link href="style.css" rel="stylesheet" type="text/css" />-->
+  </head>
+  <body>
+    <ul>
+        <li><button id="test1">Test 1: create record</button></li>
+        <li><button id="test3">Test 3: get all records</button></li>
+    </ul>
+    <div>Update a record: key, body<div>
+    <form id="test2">
+        <input name="key" type="number" /><br>
+        <input name="body" type="text" /><br>
+        <input type="submit" />
+    </form>
+    <form id="test4">
+        <label>get by key</label><br>
+        <input name="key" type="number" />
+        <!--<input name="test4" type="submit" />-->
+    </form>
+    <form id="test5">
+        <label>delete by key</label><br>
+        <input name="key" type="number" />
+    </form>
+
+    <script src="../js/db.js"></script>
+    <script src="tests.js"></script>
+  </body>
+</html>

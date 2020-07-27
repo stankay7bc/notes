@@ -1,0 +1,76 @@
+body {
+    display:flex;
+    justify-content: center;
+}
+
+main {
+    display: flex;
+    height:85vh;
+    width:90vw;
+    position: relative;
+    top:1.5vh;
+    /*outline:2px solid red;*/
+}
+
+main > *:nth-child(1) {
+    flex: 1 1 175vw;
+}
+.page {
+    /*position: absolute;*/
+    display: flex;
+    flex-direction:column;
+    background-color: white;
+    height:100%;
+    width:100%;
+    margin:.2em;
+    /*outline:1px dashed blue;*/
+}
+
+.page > *:nth-child(1) {
+    flex: 1 1 auto;
+}
+
+#editor {
+    z-index: 2;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ol li {
+    display:inline-flex;
+}
+
+@media screen and (max-width: 620px) {
+    .page {
+        position: absolute;
+    }
+}
+
+#sheet {
+    overflow-y: scroll;
+    white-space: pre;
+    padding:.5em;
+    resize:none;
+}
+
+#sheet:focus {
+    outline:none;
+}
+
+#note-list {
+    border:1px dashed dimgrey;
+    overflow-y: scroll;
+}
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+article {
+    outline: 1px dashed darkblue;
+    padding: .25em;
+    margin: .75em;
+}
