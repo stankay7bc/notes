@@ -42,7 +42,7 @@ function listView(notes) {
 } 
   
   /* 
-  * set new note state view
+  * set UI for a new note
   */
   function newNoteUI() {
       localStorage.clear();
@@ -54,7 +54,7 @@ function listView(notes) {
   /**
   * Note -> void // Note is {ts: Number, body: String }
   * insert a new article element with a content
-  * to a list of article elements, which are notes
+  * to a list of article elements
   */
   function addNoteUI(anote) {
       let newArticle = articleElem.cloneNode();
@@ -84,7 +84,9 @@ function listView(notes) {
   
   /**
   * Note -> void
-  * set app UI to editing a note
+  * Load note content into #sheet
+  * Update url to match the note
+  * Push #sheet to front
   */
   function setNoteToSheet(note) {
       localStorage.setItem('currentSavedNote',note.body);
@@ -96,11 +98,7 @@ function listView(notes) {
   /** REACT  */
   
   /**
-  * Select a note to display/edit
-  * 
-  * Load note content into #sheet
-  * Update url to match the note
-  * Push #sheet to front
+  * Select a note to display/edit 
   */
   articlesCont.addEventListener("click",event=>{
     if(event.target.tagName==="ARTICLE") {
